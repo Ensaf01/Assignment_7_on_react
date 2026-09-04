@@ -1,7 +1,11 @@
+import { useState } from "react";
+import Currentcooking from "../CurrentCooking/Currentcooking";
 
 
-const CookSidebar = ({ cooking }) => {
+const CookSidebar = ({ cooking,handleCurrentCooking }) => {
     const { recipe_id, recipe_name, short_description, preparing_time, calories } = cooking;
+
+   
     return (
         <div className="">
             <div >
@@ -13,7 +17,7 @@ const CookSidebar = ({ cooking }) => {
                 }
                 <hr />
 
-                <table className="">
+                <table className="mb-10">
                     <thead>
                         <tr>
                             <th className="border border-gray-400 p-3 text-left">Name</th>
@@ -28,7 +32,7 @@ const CookSidebar = ({ cooking }) => {
                          <tr key={items.recipe_id}>
                             <td className="border border-gray-400 p-3">{index+1}. {items.recipe_name}</td>
                             <td className="border border-gray-400 p-3">{items.preparing_time}</td>
-                            <td className="border border-gray-400 p-3">{items.calories} <button className="bg-green-600 p-2 rounded-3xl text-white font-medium">Process</button></td>
+                            <td className="border border-gray-400 p-3">{items.calories} <button onClick={()=>handleCurrentCooking(items,items.recipe_id)} className="bg-green-600 p-2 rounded-3xl text-white font-medium">Process</button></td>
                         </tr>)
                         }
                         
@@ -36,8 +40,11 @@ const CookSidebar = ({ cooking }) => {
                 </table>
 
 
+
             </div>
         </div>
+
+        
 
     );
 };

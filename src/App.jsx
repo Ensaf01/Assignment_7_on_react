@@ -6,12 +6,16 @@ import Banner from './components/Banner/Banner';
 import { useState } from 'react';
 import CookSidebar from './components/CookSideBar/CookSidebar';
 import { Toaster, toast } from "react-hot-toast";
+import Currentcooking from './components/CurrentCooking/Currentcooking';
 
 
 function App() {
   
   const [cooking, setCooking] = useState([]);
 
+  const [currentCook,setCurrentCook]=useState([]);
+
+    
   const handleCookButton = (recipeAdd) => {
     const alreadyAdded = cooking.some(
       item => item.recipe_id === recipeAdd.recipe_id
@@ -26,6 +30,18 @@ function App() {
     setCooking(newCookList);
     toast.success("Recipe added successfully!");
   }
+
+  const handleCurrentCooking=(items,recipe_id)=>{
+        
+        const newCurrentCook=[...currentCook, items];
+        setCurrentCook(newCurrentCook);
+
+        // remain current cook
+        const remainCook=cooking.filter(cook => cook.recipe_id!==recipe_id)
+        setCooking(remainCook);
+
+    }
+
 
 
   return (
@@ -73,7 +89,10 @@ function App() {
           </div>
         </div>
         <div className='mt-10 border-2 p-10 rounded-lg'>
-          <CookSidebar cooking={cooking}></CookSidebar>
+          <CookSidebar cooking={cooking}
+          handleCurrentCooking={handleCurrentCooking}
+          ></CookSidebar>
+          <Currentcooking currentCook={currentCook}></Currentcooking>
         </div>
 
 
