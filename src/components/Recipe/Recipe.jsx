@@ -25,7 +25,7 @@ const Recipe = ({ recipe,handleCookButton }) => {
                 <p>{recipe.preparing_time} minutes</p>
                 </div>
                 <div>
-                    <button  onClick={()=>handleCookButton(recipe)} className="bg-green-700 rounded-2xl w-60 p-2">Want to Cook</button>
+                    <button  onClick={()=>handleCookButton(recipe)} className="bg-green-700 rounded-2xl  md:w-12 lg:w-24 p-2">Want to Cook</button>
 
                 </div>
                 
