@@ -1,7 +1,7 @@
 
 import Recipe from '../Recipe/Recipe.jsx'
 import { useState, useEffect } from 'react';
-const Recipes = () => {
+const Recipes = ({ handleCookButton }) => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
@@ -10,16 +10,22 @@ const Recipes = () => {
             .then(data => setRecipes(data))
     }, [])
     return (
-        <div>
+        <div className='m-10 rounded-lg'>
            
-            <div className='m-10 grid grid-cols-2 gap-10 '>
 
-                {
-                    recipes.map((recipe, indx) => <Recipe key={indx} recipe={recipe}></Recipe>)
-                }
+            <div>
+                <div className=' grid grid-cols-2  '>
 
-
+                    {
+                        recipes.map((recipe, indx) => <Recipe
+                            key={indx}
+                            recipe={recipe}
+                            handleCookButton={handleCookButton}
+                        ></Recipe>)
+                    }
+                </div>
             </div>
+
         </div>
 
     );

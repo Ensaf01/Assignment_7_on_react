@@ -1,10 +1,10 @@
 
-
-const Recipe = ({ recipe }) => {
-    console.log("length", recipe);
+import { BsStopwatch } from "react-icons/bs";
+const Recipe = ({ recipe,handleCookButton }) => {
+    // console.log("length", recipe);
     return (
         <div>
-            
+
             <div className=" flex flex-col gap-3 border-2 p-3 rounded-lg">
                 <img className="w-full rounded-lg" src={recipe.recipe_image} alt="" />
                 <p className="text-xl font-semibold">{recipe.recipe_name}</p>
@@ -13,13 +13,22 @@ const Recipe = ({ recipe }) => {
                 <h2 className="font-semibold text-xl">ingredients:{recipe.ingredients.length}</h2>
                 <div>
                     <ul>
-                     
+
                         {
-                          recipe.ingredients.map(ing => <li>{ing}</li>)  
+                            recipe.ingredients.map((ing,idex) => <li key={idex}>{ing}</li>)
                         }
-                        
+
                     </ul>
                 </div>
+                <div className="flex gap-2 items-center">
+                 <BsStopwatch></BsStopwatch>
+                <p>{recipe.preparing_time} minutes</p>
+                </div>
+                <div>
+                    <button  onClick={()=>handleCookButton(recipe)} className="bg-green-700 rounded-2xl w-60 p-2">Want to Cook</button>
+
+                </div>
+                
             </div>
         </div>
     );

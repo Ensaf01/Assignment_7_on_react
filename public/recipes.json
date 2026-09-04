@@ -12,7 +12,7 @@
       "30 g ginger-garlic paste",
       "20 g biryani masala"
     ],
-    "preparing_time": "60 min",
+    "preparing_time": 60,
     "calories": "550 calories"
   },
   {
@@ -28,7 +28,7 @@
       "50 g onion",
       "30 ml olive oil"
     ],
-    "preparing_time": "30 min",
+    "preparing_time": 30,
     "calories": "420 calories"
   },
   {
@@ -44,7 +44,7 @@
       "5 g salt",
       "10 g fresh herbs"
     ],
-    "preparing_time": "25 min",
+    "preparing_time": 25,
     "calories": "620 calories"
   },
   {
@@ -60,7 +60,7 @@
       "50 g carrot",
       "30 ml lemon dressing"
     ],
-    "preparing_time": "20 min",
+    "preparing_time": 20,
     "calories": "320 calories"
   },
   {
@@ -76,7 +76,7 @@
       "15 g garlic",
       "20 g butter"
     ],
-    "preparing_time": "35 min",
+    "preparing_time": 35,
     "calories": "510 calories"
   },
   {
@@ -92,7 +92,7 @@
       "80 g cheese",
       "50 ml taco sauce"
     ],
-    "preparing_time": "30 min",
+    "preparing_time": 30,
     "calories": "390 calories"
   }
 ]

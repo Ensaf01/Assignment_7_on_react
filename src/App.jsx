@@ -3,9 +3,19 @@ import './App.css'
 import { CiSearch } from "react-icons/ci";
 import Recipes from './components/Recipes/Recipes';
 import Banner from './components/Banner/Banner';
+import { useState } from 'react';
+import CookSidebar from './components/CookSideBar/CookSidebar';
 
 
 function App() {
+
+  const [cooking, setCooking] = useState([]);
+
+  const handleCookButton = (recipeAdd) => {
+    // console.log("recipes add",recipeAdd)// check after click want to cook buton each aray come or not
+    const newCookList = [...cooking, recipeAdd]
+    setCooking(newCookList);
+  }
 
 
   return (
@@ -36,10 +46,31 @@ function App() {
 
         </div>
 
-      
+
       </div>
       <Banner></Banner>
-      <Recipes></Recipes>
+      <div className='flex justify-center   text-black text-center rounded-lg m-10'>
+        <div className=''>
+          <h1 className="text-4xl font-bold mb-3">Our Recipes</h1>
+          <p>Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus. <br></br> Eget urna volutpat curabitur elementum mauris aenean neque. </p>
+        </div>
+      </div>
+      <div className='grid grid-flow-col m-10   '>
+        <div className='w-4/5 '>
+          <div className=''>
+            <Recipes handleCookButton={handleCookButton}></Recipes>
+          </div>
+        </div>
+        <div className='mt-10'>
+          <CookSidebar cooking={cooking}></CookSidebar>
+        </div>
+
+
+
+
+      </div>
+
+
     </>
   )
 }
