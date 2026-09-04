@@ -36,12 +36,10 @@ function App() {
 
         </div>
 
+      
       </div>
       <Banner></Banner>
       <Recipes></Recipes>
-
-
-
     </>
   )
 }

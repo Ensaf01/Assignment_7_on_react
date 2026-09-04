@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <div>
             <section
-                className=" mx-10 rounded-2xl bg-cover bg-center  "
+                className=" mx-10 rounded-2xl bg-no-repeat bg-cover bg-center  "
                 style={{ backgroundImage: `url(${Chef})` }}
             >
                 <div className='flex flex-col text-center gap-10'>
@@ -19,7 +19,11 @@ const Banner = () => {
                     </div>
 
 
-                    <div className=''>
+                    <div className='mb-20 {
+                        constructor(parameters) {
+                            
+                        }
+                    }'>
                         <button className='text-black bg-green-600 p-2 rounded-xl font-bold mr-3'>Explore Now</button>
                         <button className='border-2 border-white p-2 rounded-xl text-white'>Our Feedback</button>
                     </div>
@@ -28,34 +32,6 @@ const Banner = () => {
 
                 </div>
             </section>
-            {/* <section
-                className="min-h-[450px] mx-10 rounded-2xl bg-cover bg-center"
-                style={{ backgroundImage: `url(${Chef})` }}
-            >
-                <div className="min-h-[450px] flex items-center bg-black/40 rounded-2xl">
-                    <div className="px-10 text-white">
-                        <h1 className="text-5xl font-bold">
-                            Discover Delicious Recipes
-                        </h1>
-
-                        <p className="mt-4 max-w-xl">
-                            Explore delicious recipes with ingredients, preparation time,
-                            and calorie information for your next meal.
-                        </p>
-
-                        <div className="mt-6 flex gap-4">
-                            <button className="bg-green-500 px-5 py-3 rounded-lg">
-                                Explore Now
-                            </button>
-
-                            <button className="border-2 border-white px-5 py-3 rounded-lg">
-                                Our Feedback
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
-
         </div>
     );
 };
