@@ -61,7 +61,7 @@ function App() {
             <Recipes handleCookButton={handleCookButton}></Recipes>
           </div>
         </div>
-        <div className='mt-10'>
+        <div className='mt-10 border-2 p-10 rounded-lg'>
           <CookSidebar cooking={cooking}></CookSidebar>
         </div>
 
