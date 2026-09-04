@@ -3,7 +3,7 @@ import { BsStopwatch } from "react-icons/bs";
 const Recipe = ({ recipe,handleCookButton }) => {
     // console.log("length", recipe);
     return (
-        <div>
+        <div className="">
 
             <div className=" flex flex-col gap-3 border-2 p-3 rounded-lg">
                 <img className="w-full rounded-lg" src={recipe.recipe_image} alt="" />

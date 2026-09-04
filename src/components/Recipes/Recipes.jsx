@@ -14,7 +14,7 @@ const Recipes = ({ handleCookButton }) => {
            
 
             <div>
-                <div className=' grid grid-cols-2  '>
+                <div className=' grid grid-cols-2 gap-10 '>
 
                     {
                         recipes.map((recipe, indx) => <Recipe
