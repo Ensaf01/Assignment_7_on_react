@@ -33,12 +33,12 @@ function App() {
 
   const handleCurrentCooking=(items,recipe_id)=>{
         
-        const newCurrentCook=[...currentCook, items];
+        const newCurrentCook=[...currentCook, items]; //je item reomve hobe process click korle se item ke dhore amra currentCook object a rakbo
         setCurrentCook(newCurrentCook);
 
         // remain current cook
         const remainCook=cooking.filter(cook => cook.recipe_id!==recipe_id)
-        setCooking(remainCook);
+        setCooking(remainCook);// akhen amra setcooking ke call korbo,krn want to cook update korte chai,mane process a click korle remove hoye jabe,
 
     }
 
@@ -92,7 +92,8 @@ function App() {
           <CookSidebar cooking={cooking}
           handleCurrentCooking={handleCurrentCooking}
           ></CookSidebar>
-          <Currentcooking currentCook={currentCook}></Currentcooking>
+          <Currentcooking currentCook={currentCook}></Currentcooking> 
+          {/* currentCook object diye CurrentCooking component ke call korbo krn sekhne ay data gula show korbo */}
         </div>
 
 
