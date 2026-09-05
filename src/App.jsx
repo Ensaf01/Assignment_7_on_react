@@ -3,19 +3,22 @@ import './App.css'
 import { CiSearch } from "react-icons/ci";
 import Recipes from './components/Recipes/Recipes';
 import Banner from './components/Banner/Banner';
-import { useState } from 'react';
+import { use, useState } from 'react';
 import CookSidebar from './components/CookSideBar/CookSidebar';
 import { Toaster, toast } from "react-hot-toast";
 import Currentcooking from './components/CurrentCooking/Currentcooking';
+import Calculation from './components/Calculation/Calculation';
 
 
 function App() {
-  
+
   const [cooking, setCooking] = useState([]);
 
-  const [currentCook,setCurrentCook]=useState([]);
+  const [currentCook, setCurrentCook] = useState([]);
+  const [TimeCalculation, setTimeCalulation] = useState(0);
+  const [CaloriesCalculation, setCaloriesCalculation] = useState(0);
 
-    
+
   const handleCookButton = (recipeAdd) => {
     const alreadyAdded = cooking.some(
       item => item.recipe_id === recipeAdd.recipe_id
@@ -31,23 +34,32 @@ function App() {
     toast.success("Recipe added successfully!");
   }
 
-  const handleCurrentCooking=(items,recipe_id)=>{
-        
-        const newCurrentCook=[...currentCook, items]; //je item reomve hobe process click korle se item ke dhore amra currentCook object a rakbo
-        setCurrentCook(newCurrentCook);
+  const handleCurrentCooking = (items, recipe_id, time, calories) => {
 
-        // remain current cook
-        const remainCook=cooking.filter(cook => cook.recipe_id!==recipe_id)
-        setCooking(remainCook);// akhen amra setcooking ke call korbo,krn want to cook update korte chai,mane process a click korle remove hoye jabe,
+    const newCurrentCook = [...currentCook, items]; //je item reomve hobe process click korle se item ke dhore amra currentCook object a rakbo
+    setCurrentCook(newCurrentCook);
 
-    }
+    // remain current cook
+    const remainCook = cooking.filter(cook => cook.recipe_id !== recipe_id)
+    setCooking(remainCook);// akhen amra setcooking ke call korbo,krn want to cook update korte chai,mane process a click korle remove hoye jabe,
+
+    // time and calories update
+
+    const newCalcuation = TimeCalculation + time;
+    setTimeCalulation(newCalcuation)
+
+    //calories 
+    const newCaloriesCalcuation = CaloriesCalculation + calories;
+    setCaloriesCalculation(newCaloriesCalcuation)
+
+  }
 
 
 
   return (
 
     <>
-    <Toaster position="top-center" />
+      <Toaster position="top-center" />
       <div className='flex m-10 border-2 rounded-lg  items-center text-center justify-between p-1 '>
         <div className=''>
           <h2 className='text-3xl font-semibold'><a href="">Recipe Calories</a></h2>
@@ -90,17 +102,23 @@ function App() {
         </div>
         <div className='mt-10 border-2 p-10 rounded-lg'>
           <CookSidebar cooking={cooking}
-          handleCurrentCooking={handleCurrentCooking}
+            handleCurrentCooking={handleCurrentCooking}
           ></CookSidebar>
-          <Currentcooking currentCook={currentCook}></Currentcooking> 
+          <Currentcooking currentCook={currentCook}></Currentcooking>
           {/* currentCook object diye CurrentCooking component ke call korbo krn sekhne ay data gula show korbo */}
+          <div>
+            {/*Cooking time calculation */}
+            <Calculation time={TimeCalculation}
+            calorie={CaloriesCalculation}></Calculation>
+
+          </div>
+
+
         </div>
 
 
 
-
       </div>
-
 
     </>
   )

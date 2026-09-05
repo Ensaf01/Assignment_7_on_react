@@ -13,7 +13,7 @@
       "20 g biryani masala"
     ],
     "preparing_time": 60,
-    "calories": "550 calories"
+    "calories": 550
   },
   {
     "recipe_id": 2,
@@ -29,7 +29,7 @@
       "30 ml olive oil"
     ],
     "preparing_time": 30,
-    "calories": "420 calories"
+    "calories": 420
   },
   {
     "recipe_id": 3,
@@ -45,7 +45,7 @@
       "10 g fresh herbs"
     ],
     "preparing_time": 25,
-    "calories": "620 calories"
+    "calories": 620
   },
   {
     "recipe_id": 4,
@@ -61,7 +61,7 @@
       "30 ml lemon dressing"
     ],
     "preparing_time": 20,
-    "calories": "320 calories"
+    "calories": 320
   },
   {
     "recipe_id": 5,
@@ -77,7 +77,7 @@
       "20 g butter"
     ],
     "preparing_time": 35,
-    "calories": "510 calories"
+    "calories": 510
   },
   {
     "recipe_id": 6,
@@ -93,6 +93,6 @@
       "50 ml taco sauce"
     ],
     "preparing_time": 30,
-    "calories": "390 calories"
+    "calories": 390
   }
 ]

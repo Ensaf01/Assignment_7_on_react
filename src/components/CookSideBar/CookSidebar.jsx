@@ -20,7 +20,7 @@ const CookSidebar = ({ cooking,handleCurrentCooking }) => {
                 <table className="mb-10">
                     <thead>
                         <tr>
-                            <th className="border border-gray-400 p-3 text-left">Name</th>
+                            <th className="border border-gray-400 p-3 text-left w-full">Name</th>
                             <th className="border border-gray-400 p-3 text-left">Time</th>
                             <th className="border border-gray-400 p-3 text-left">Calories</th>
                         </tr>
@@ -31,8 +31,8 @@ const CookSidebar = ({ cooking,handleCurrentCooking }) => {
                             cooking.map((items,index) =>
                          <tr key={items.recipe_id}>
                             <td className="border border-gray-400 p-3">{index+1}. {items.recipe_name}</td>
-                            <td className="border border-gray-400 p-3">{items.preparing_time}</td>
-                            <td className="border border-gray-400 p-3">{items.calories} <button onClick={()=>handleCurrentCooking(items,items.recipe_id)} className="bg-green-600 p-2 rounded-3xl text-white font-medium">Process</button></td>
+                            <td className="border border-gray-400 p-3">{items.preparing_time} mins</td>
+                            <td className="border border-gray-400 p-3 flex items-center gap-4">{items.calories} calories<button onClick={()=>handleCurrentCooking(items,items.recipe_id, items.preparing_time,items.calories)} className="bg-green-600 p-2 rounded-3xl text-white font-medium">Process</button></td>
                         </tr>)
                         }
                         

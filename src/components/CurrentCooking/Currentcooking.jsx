@@ -20,8 +20,8 @@ const Currentcooking = ({currentCook}) => {
                             currentCook.map((items,index) =>
                          <tr key={items.recipe_id}>
                             <td className="border border-gray-400 p-3">{index+1}. {items.recipe_name}</td>
-                            <td className="border border-gray-400 p-3">{items.preparing_time}</td>
-                            <td className="border border-gray-400 p-3">{items.calories} </td>
+                            <td className="border border-gray-400 p-3">{items.preparing_time} mins</td>
+                            <td className="border border-gray-400 p-3">{items.calories} calories</td>
                         </tr>)
                         }
                         
